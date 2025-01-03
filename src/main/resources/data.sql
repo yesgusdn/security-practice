@@ -1,1 +1,4 @@
 INSERT INTO USERS (username, password) VALUES ('admin', '$2a$10$abcxyz...');
+
+INSERT INTO STOCK VALUES ('MSFT', 'MICROSOFT', 'USA');
+INSERT INTO STOCK VALUES ('TSLA', 'TESLA', 'USA');

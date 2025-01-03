@@ -9,3 +9,9 @@ CREATE TABLE IF NOT EXISTS users (
     account_non_locked boolean,
     credentials_non_expired boolean
 );
+
+CREATE TABLE IF NOT EXISTS STOCK (
+	STOCK_CD VARCHAR(20) NOT NULL,
+	STOCK_NM VARCHAR(20) NOT NULL,
+	COUNTRY VARCHAR(20) NOT NULL
+);

@@ -37,12 +37,13 @@ public class SecurityConfig {
 			.cors(cors -> cors.configurationSource(corsConfigurationSource()))
 		    .csrf(csrfConfig -> csrfConfig.disable())
 		    .authorizeHttpRequests(auth -> auth
-		    		    .requestMatchers("/api/auth/**", "/h2-console/**").permitAll()
+		    		    .requestMatchers("/api/**", "/h2-console/**").permitAll()
 		                .anyRequest().authenticated())
 			.formLogin(formLogin -> 
 					formLogin.disable()
 			)
 			.logout(logout -> logout.permitAll())
+			.headers((headers) -> headers.frameOptions((frameOptions) -> frameOptions.disable()))
             .addFilterBefore(new JwtAuthenticationFilter(jwtProviderService, userDetailsService), UsernamePasswordAuthenticationFilter.class);
 		                                           
 		return http.build();
